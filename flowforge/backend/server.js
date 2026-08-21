@@ -8,22 +8,22 @@ const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const { Server } = require('socket.io');
 
-const connectDB = require('./config/db');
-const { notFound, errorHandler } = require('./middleware/errorHandler');
-const { initSocket } = require('./sockets');
-const { registerWorkflowListeners } = require('./workflow/engine');
-const { startOverdueChecker } = require('./services/overdueChecker');
+const connectDB = require('./src/config/db');
+const { notFound, errorHandler } = require('./src/middleware/errorHandler');
+const { initSocket } = require('./src/sockets');
+const { registerWorkflowListeners } = require('./src/workflow/engine');
+const { startOverdueChecker } = require('./src/services/overdueChecker');
 
 // Routes
-const authRoutes = require('./routes/authRoutes');
-const projectRoutes = require('./routes/projectRoutes');
-const taskRoutes = require('./routes/taskRoutes');
-const workflowRoutes = require('./routes/workflowRoutes');
-const notificationRoutes = require('./routes/notificationRoutes');
-const webhookRoutes = require('./routes/webhookRoutes');
-const dashboardRoutes = require('./routes/dashboardRoutes');
-const userRoutes = require('./routes/userRoutes');
-const searchRoutes = require('./routes/searchRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const projectRoutes = require('./src/routes/projectRoutes');
+const taskRoutes = require('./src/routes/taskRoutes');
+const workflowRoutes = require('./src/routes/workflowRoutes');
+const notificationRoutes = require('./src/routes/notificationRoutes');
+const webhookRoutes = require('./src/routes/webhookRoutes');
+const dashboardRoutes = require('./src/routes/dashboardRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const searchRoutes = require('./src/routes/searchRoutes');
 
 connectDB();
 
